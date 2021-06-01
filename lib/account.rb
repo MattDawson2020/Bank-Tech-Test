@@ -13,12 +13,12 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    store_transaction(Transaction.new( time: Time.now, credit: amount, debit: nil, balance: @balance))
+    store_transaction(Transaction.new(time: Time.now, type: :deposit, amount: amount, balance: @balance))
   end
 
   def withdraw(amount)
     @balance -= amount
-    store_transaction(Transaction.new( time: Time.now, credit: nil, debit: amount, balance: @balance))
+    store_transaction(Transaction.new(time: Time.now, type: :withdrawal, amount: amount, balance: @balance))
   end
 
   def print_statement
@@ -34,10 +34,10 @@ class Account
   end
 
   def format_type(transaction)
-    if !transaction.credit.nil?
-      ' || ' + '%.2f' % transaction.credit + ' || || '
+    if transaction.type == :deposit
+      ' || ' + '%.2f' % transaction.amount + ' || || '
     else
-      ' || || ' + '%.2f' % transaction.debit+ ' || '
+      ' || || ' + '%.2f' % transaction.amount+ ' || '
     end
   end
 

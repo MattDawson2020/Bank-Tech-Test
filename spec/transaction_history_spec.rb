@@ -1,8 +1,8 @@
 require 'transaction_history'
 
 describe TransactionHistory do
-  let(:deposit_double) {double(:transaction, time: Time.now, credit: 500, debit: nil, balance: 1500) }
-  let(:withdrawal_double) {double(:transaction, time: Time.now, credit: nil, debit: 500, balance: 500) }
+  let(:deposit_double) {double(:transaction, time: Time.now, amount: 500, balance: 1500) }
+  let(:withdrawal_double) {double(:transaction, time: Time.now, amount: -500, balance: 500) }
 
   
   it 'can add a transaction' do

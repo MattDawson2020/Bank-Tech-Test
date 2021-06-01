@@ -1,16 +1,12 @@
 class Transaction
 
-  attr_reader :time, :debit, :balance
+  attr_reader :time, :amount, :type, :balance
 
-  def initialize(time:, credit:, debit:, balance:)
+  def initialize(time:, amount:, type:, balance:)
     @time = time
-    @credit = credit
-    @debit = debit
+    @amount = amount
+    @type = type
     @balance= balance
-  end
-
-  def credit 
-    return @credit unless @credit.nil?
   end
 
 end
