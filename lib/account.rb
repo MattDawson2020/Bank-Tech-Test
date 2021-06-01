@@ -9,10 +9,12 @@ class Account
 
   def deposit(amount)
     @balance += amount
+    Transaction.new( time: Time.now, credit: amount, debit: nil, balance: @balance)
   end
 
   def withdraw(amount)
     @balance -= amount
+    Transaction.new( time: Time.now, credit: nil, debit: amount, balance: @balance)
   end
 
 end

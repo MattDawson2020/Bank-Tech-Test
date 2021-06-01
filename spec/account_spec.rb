@@ -13,8 +13,9 @@ describe Account do
 
     it 'creates a transaction when you deposit' do
       transaction = subject.deposit(500)
-      expect(transaction).to be_instance_of transaction
-      expect(transaction.credit).t0 eq 500
+      expect(transaction).to be_instance_of Transaction
+      expect(transaction.credit).to eq 500
+      expect(transaction.debit).to be_nil
       expect(transaction.balance).to eq 1500
     end
   end
@@ -25,6 +26,14 @@ describe Account do
       expect(subject.balance).to eq 1000
       subject.withdraw(500)
       expect(subject.balance).to eq 500
+    end
+
+    it 'creates a transaction when you withdraw' do
+      transaction = subject.withdraw(500)
+      expect(transaction).to be_instance_of Transaction
+      expect(transaction.credit).to be_nil
+      expect(transaction.debit).to eq 500
+      expect(transaction.balance).to eq 500
     end
   end
 
