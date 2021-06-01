@@ -18,6 +18,7 @@ describe Account do
       expect(transaction.debit).to be_nil
       expect(transaction.balance).to eq 1500
     end
+
   end
 
   context '#withdraw' do
@@ -34,6 +35,14 @@ describe Account do
       expect(transaction.credit).to be_nil
       expect(transaction.debit).to eq 500
       expect(transaction.balance).to eq 500
+    end
+
+  end
+
+  context '#transaction_history' do
+    
+    it 'injects a transaction history object' do
+      expect(subject.transaction_history).to be_instance_of TransactionHistory
     end
   end
 
