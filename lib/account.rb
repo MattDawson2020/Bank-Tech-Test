@@ -12,12 +12,19 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    Transaction.new( time: Time.now, credit: amount, debit: nil, balance: @balance)
+    store_transaction(Transaction.new( time: Time.now, credit: amount, debit: nil, balance: @balance))
   end
 
   def withdraw(amount)
     @balance -= amount
-    Transaction.new( time: Time.now, credit: nil, debit: amount, balance: @balance)
+    store_transaction(Transaction.new( time: Time.now, credit: nil, debit: amount, balance: @balance))
+  end
+
+
+  private 
+  
+  def store_transaction(transaction)
+    @transaction_history.add_transaction(transaction)
   end
 
 end

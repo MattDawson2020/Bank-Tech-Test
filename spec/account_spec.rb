@@ -11,9 +11,9 @@ describe Account do
       expect(subject.balance).to eq 1500
     end
 
-    it 'creates a transaction when you deposit' do
-      transaction = subject.deposit(500)
-      expect(transaction).to be_instance_of Transaction
+    it 'creates and stores stores a deposit transaction in transaction_history' do
+      subject.deposit(500)
+      transaction = subject.transaction_history.transactions.first
       expect(transaction.credit).to eq 500
       expect(transaction.debit).to be_nil
       expect(transaction.balance).to eq 1500
@@ -29,11 +29,12 @@ describe Account do
       expect(subject.balance).to eq 500
     end
 
-    it 'creates a transaction when you withdraw' do
-      transaction = subject.withdraw(500)
-      expect(transaction).to be_instance_of Transaction
-      expect(transaction.credit).to be_nil
+
+    it 'creates and stores a withdrawal transaction in transaction_history' do
+      subject.withdraw(500)
+      transaction = subject.transaction_history.transactions.first
       expect(transaction.debit).to eq 500
+      expect(transaction.credit).to be_nil
       expect(transaction.balance).to eq 500
     end
 
@@ -44,6 +45,7 @@ describe Account do
     it 'injects a transaction history object' do
       expect(subject.transaction_history).to be_instance_of TransactionHistory
     end
+    
   end
 
 end
