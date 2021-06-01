@@ -5,7 +5,7 @@ require 'date'
 class Account
   attr_reader :balance, :transaction_history
 
-  def initialize(balance = 0.00, transaction_history: TransactionHistory.new)
+  def initialize(balance = 0, transaction_history: TransactionHistory.new)
     @balance = balance
     @transaction_history = transaction_history
   end

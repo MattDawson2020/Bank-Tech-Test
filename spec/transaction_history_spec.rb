@@ -9,7 +9,7 @@ describe TransactionHistory do
    expect(subject.transactions.first).to be deposit_double
   end
 
-  it 'can store deposite and withdrawal transactions' do
+  it 'can store deposit and withdrawal transactions' do
     subject.add_transaction(deposit_double)
     subject.add_transaction(withdrawal_double)
 
