@@ -23,11 +23,6 @@ class Account
     store_transaction(Transaction.new(time: Time.now, type: :withdrawal, amount: amount, balance: @balance))
   end
 
-  def print_statement
-    puts "Date  ||  Credit  ||  Debit  ||  Balance\n" +
-    @transaction_history.transactions.reverse.map { |transaction| format_transaction(transaction) }.join("\n")
-  end
-
   private
   
   def store_transaction(transaction)
@@ -41,18 +36,6 @@ class Account
   def validate_withdrawal(amount)
     fail "Invalid withdrawal request, please withdraw numeric currency" unless (amount.is_a?(Integer) || amount.is_a?(Float))
     fail "Insufficient funds" if amount > @balance
-  end
-
-  def format_type(transaction)
-    if transaction.type == :deposit
-      ' || ' + '%.2f' % transaction.amount + ' || || '
-    else
-      ' || || ' + '%.2f' % transaction.amount + ' || '
-    end
-  end
-
-  def format_transaction(transaction)
-    transaction.time.strftime("%d/%m/%Y") + format_type(transaction) + '%.2f' % transaction.balance
   end
 
 end
