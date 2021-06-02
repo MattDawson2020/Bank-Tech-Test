@@ -14,7 +14,7 @@ describe Statement do
     let(:decimal_double_1) { double(:transaction, time: Time.now, type: :deposit, amount: 1000.95, balance: 1000.95) }
     let(:decimal_double_2) { double(:transaction, time: Time.now, type: :deposit, amount: 2000.95, balance: 3001.90) }
     let(:decimal_double_3) { double(:transaction, time: Time.now, type: :withdrawal, amount: 500.67, balance: 2501.23) }
-  
+    # Was going to combine current date and decimal doubles to trim this page down, but I decied against this as it violates SRP
 
     let(:transaction_history) { double(:transaction_history, transactions: []) }
     let(:account) { double(:account, balance: 1000, transaction_history: transaction_history)}

@@ -1,5 +1,3 @@
-require_relative 'transaction'
-require_relative 'transaction_history'
 require 'date'
 
 class Statement 

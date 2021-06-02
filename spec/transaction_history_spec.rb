@@ -1,8 +1,8 @@
 require 'transaction_history'
 
 describe TransactionHistory do
-  let(:deposit_double) {double(:transaction, time: Time.now, amount: 500, balance: 1500) }
-  let(:withdrawal_double) {double(:transaction, time: Time.now, amount: -500, balance: 500) }
+  let(:deposit_double) {double(:transaction, time: Time.now, type: :deposit, amount: 500, balance: 1500) }
+  let(:withdrawal_double) {double(:transaction, time: Time.now, type: :withdrawal, amount: 500, balance: 500) }
 
   it 'can add a transaction' do
    subject.add_transaction(deposit_double)
