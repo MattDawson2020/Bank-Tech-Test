@@ -26,12 +26,12 @@ class Account
   end
 
   def validate_deposit(amount)
-    fail "Invalid input type, please deposit numeric currency" unless (amount.is_a?(Integer) || amount.is_a?(Float))
+    fail 'Invalid input type, please deposit numeric currency' unless amount.is_a?(Integer) || amount.is_a?(Float)
   end
 
   def validate_withdrawal(amount)
-    fail "Invalid withdrawal request, please withdraw numeric currency" unless (amount.is_a?(Integer) || amount.is_a?(Float))
-    fail "Insufficient funds" if amount > @balance
+    fail 'Invalid withdrawal request, please withdraw numeric currency' unless amount.is_a?(Integer) || amount.is_a?(Float)
+    fail 'Insufficient funds' if amount > @balance
   end
 
 end
