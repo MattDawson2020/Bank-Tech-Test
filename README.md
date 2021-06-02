@@ -26,11 +26,12 @@ bundle
 ```
 ### Run App
 App is REPL based, use IRB (or PRY) and require the app.rb file, which in turn requires the class files for you
-- Create an account object { account = Account.new }in the terminal, which defaults to a balance of 0
-- Use account.deposit(amount) or account.withdraw(amount) with amount being an integer or float numeric value
-- You can use account.transaction_history to see an array of transactions, to select an individual one use account.transaction_history.transactions and a selector
-- To create a statement object { statement = Statement.new(account) } with an injected account object
-- To print a statement use statement.print_statement, it will draw data through the injected account and format it for you
+- Create an account object { **account = Account.new** }in the terminal, which defaults to a balance of 0
+- Use **account.deposit(amount)** or **account.withdraw(amount)** with amount being an integer or float numeric value
+- You can use **account.transaction_history** to see an array of transactions
+- To select an individual transaction use **account.transaction_history.transactions** and a selector { i.e .first }
+- To create a statement object { **statement = Statement.new(account)** } with an injected account object
+- To print a statement use **statement.print_statement**, it will draw data through the injected account and format it for you
 <p>&nbsp;</p>
 
 
