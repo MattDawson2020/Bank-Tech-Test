@@ -65,7 +65,7 @@ date || credit || debit || balance
 <summary>Extras </summary>
 <br>
 <ul>
-I kept it close to the specification, but made small additions where easy and appropriate:
+<li> I kept it close to the specification, but made small additions where easy and appropriate:</li>
 <li>Users cannot deposit/ withdraw anything but numeric values</li>
 <li>Users cannot withdraw more than they have as no overdraft was specified</li>
 <li>Separated printing a statement to it's own class even though it is simpler as a feature on the account, to adhere to SRP</li>
