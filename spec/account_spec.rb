@@ -22,6 +22,13 @@ describe Account do
       expect(transaction.balance).to eq 1500
     end
 
+    # it 'only allows you to deposit integers or floats' do
+    #   expect { subject.deposit("money") }.to raise_error "Invalid input type"
+    # end
+    
+    # Was going to use this and the withdrawal equivalent to provide type verification, but the +/- in the deposit and withdrawal
+    # does it for us. Undecided whether to overwrite with a custom message
+
   end
 
   context '#withdraw' do
@@ -37,6 +44,10 @@ describe Account do
       expect(transaction.amount).to eq 500
       expect(transaction.balance).to eq 500
     end
+
+    # it 'only allows you to withdraw integers or floats' do
+    #   expect { subject.withdraw("money") }.to raise_error "Invalid withdrawal request"
+    # end
 
   end
 
@@ -60,9 +71,9 @@ describe Account do
   
       expect(STDOUT).to receive(:puts).with(
         "Date  ||  Credit  ||  Debit  ||  Balance\n" +
-        "01/06/2021 || || 500.00 || 2500.00\n"  +
-        "01/06/2021 || 2000.00 || || 3000.00\n" +
-        '01/06/2021 || 1000.00 || || 1000.00'
+        "#{Time.now.strftime("%d/%m/%Y")} || || 500.00 || 2500.00\n"  +
+        "#{Time.now.strftime("%d/%m/%Y")} || 2000.00 || || 3000.00\n" +
+        "#{Time.now.strftime("%d/%m/%Y")} || 1000.00 || || 1000.00"
       )
       subject.print_statement
     end
@@ -75,9 +86,9 @@ describe Account do
   
       expect(STDOUT).to receive(:puts).with(
         "Date  ||  Credit  ||  Debit  ||  Balance\n" +
-        "01/06/2021 || || 500.67 || 2501.23\n"  +
-        "01/06/2021 || 2000.95 || || 3001.90\n" +
-        '01/06/2021 || 1000.95 || || 1000.95'
+        "#{Time.now.strftime("%d/%m/%Y")} || || 500.67 || 2501.23\n"  +
+        "#{Time.now.strftime("%d/%m/%Y")} || 2000.95 || || 3001.90\n" +
+        "#{Time.now.strftime("%d/%m/%Y")} || 1000.95 || || 1000.95"
       )
       subject.print_statement
     end
