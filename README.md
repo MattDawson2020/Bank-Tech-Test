@@ -33,80 +33,6 @@ App is REPL based, use IRB (or PRY) and require the app.rb file, which in turn r
 
 ## User Interface Flow
 
-<details>
-  <summary> Sign up </summary>
-    <img src="/public/images/user_interface/sign_up.png">
-    <br>
-    Flash error if email used is not unique 
-    <br>
-    <img src="/public/images/user_interface/signup_error_flash.png">
-    <br>
-</details>
-
-<details>
-  <summary> Sign in </summary>
-    <img src="/public/images/user_interface/sign_in.png">
-    <br>
-    <img src="/public/images/user_interface/incorrect_login_flash.png">
-    <br>
-</details>
-
-<details>
-  <summary> Listings homepage </summary>
-    <img src="/public/images/user_interface/listings_homepage.png">
-    <br>
-</details>
-
-<details>
-  <summary> List a new property </summary>
-    <img src="/public/images/user_interface/list_property.png">
-    <br>
-</details>
-
-<details>
-  <summary> View a property </summary>
-    <img src="/public/images/user_interface/property_description_page.png">
-    <br>
-</details>
-
-<details>
-  <summary> Request to rent a property </summary>
-    <img src="/public/images/user_interface/make_booking.png">
-    <br>
-    Booking status set to pending review <br>
-    <img src="/public/images/user_interface/rental_request_sent.png">
-    <br>
-    Dates in past trigger error <br>
-    <img src="/public/images/user_interface/date_in_past_flash.png">
-    <br>
-</details>
-
-<details>
-  <summary> Property request message received </summary>
-    Property owner messages view <br>
-    <img src="/public/images/user_interface/rental_request_message.png">
-    <br>
-</details>
-
-<details>
-  <summary> Property request approved </summary>
-    Renter messages view <br>
-    <img src="/public/images/user_interface/request_approved_message.png">
-    <br>
-</details>
-
-<details>
-  <summary> Booking status updated </summary>
-    <img src="/public/images/user_interface/booking_status_updated.png">
-    <br>
-</details>
-
-<details>
-  <summary> Logout </summary>
-    <img src="/public/images/user_interface/logout.png">
-    <br>
-</details>
-
 <p>&nbsp;</p>
 
 ## Planning
@@ -116,22 +42,16 @@ App is REPL based, use IRB (or PRY) and require the app.rb file, which in turn r
 <summary> Headline </summary>
 <br>
 <ul>
-
-
-
-
-
-
 <li>**Given** a client makes a deposit of 1000 on 10-01-2012  </li>
 <li>**And** a deposit of 2000 on 13-01-2012  </li>
 <li>**And** a withdrawal of 500 on 14-01-2012  </li>
 <li>**When** she prints her bank statement   </li>
 <li> **Then** she would see
 ```
-date || credit || debit || balance
-14/01/2012 || || 500.00 || 2500.00
-13/01/2012 || 2000.00 || || 3000.00
-10/01/2012 || 1000.00 || || 1000.00
+date || credit || debit || balance \n
+14/01/2012 || || 500.00 || 2500.00 \n
+13/01/2012 || 2000.00 || || 3000.00 \n
+10/01/2012 || 1000.00 || || 1000.00 \n
 </li>
 </ul>
 </details>
