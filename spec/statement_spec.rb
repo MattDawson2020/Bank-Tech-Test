@@ -3,17 +3,49 @@ require 'statement'
 describe Statement do
 
   context '#print_statement' do
-    let(:transaction_1) { double(:transaction, time: DateTime.new(2012, 1, 10), type: :deposit, amount: 1000, balance: 1000) }
-    let(:transaction_2) { double(:transaction, time: DateTime.new(2012, 1, 13), type: :deposit, amount: 2000, balance: 3000) }
-    let(:transaction_3) { double(:transaction, time: DateTime.new(2012, 1, 14), type: :withdrawal, amount: 500, balance: 2500) }
+    let(:transaction_1) { double(:transaction, time: DateTime.new(2012, 1, 10),
+                                               type: :deposit, 
+                                               amount: 1000, 
+                                               balance: 1000) }
 
-    let(:current_date_double_1) { double(:transaction, time: Time.now, type: :deposit, amount: 1000, balance: 1000) }
-    let(:current_date_double_2) { double(:transaction, time: Time.now, type: :deposit, amount: 2000, balance: 3000) }
-    let(:current_date_double_3) { double(:transaction, time: Time.now, type: :withdrawal, amount: 500, balance: 2500) }
+    let(:transaction_2) { double(:transaction, time: DateTime.new(2012, 1, 13), 
+                                               type: :deposit,
+                                               amount: 2000, 
+                                               balance: 3000) }
 
-    let(:decimal_double_1) { double(:transaction, time: Time.now, type: :deposit, amount: 1000.95, balance: 1000.95) }
-    let(:decimal_double_2) { double(:transaction, time: Time.now, type: :deposit, amount: 2000.95, balance: 3001.90) }
-    let(:decimal_double_3) { double(:transaction, time: Time.now, type: :withdrawal, amount: 500.67, balance: 2501.23) }
+    let(:transaction_3) { double(:transaction, time: DateTime.new(2012, 1, 14), 
+                                               type: :withdrawal, 
+                                               amount: 500, 
+                                               balance: 2500) }
+
+    let(:current_date_double_1) { double(:transaction, time: Time.now, 
+                                                       type: :deposit, 
+                                                       amount: 1000, 
+                                                       balance: 1000) }
+                                                       
+    let(:current_date_double_2) { double(:transaction, time: Time.now, 
+                                                       type: :deposit, 
+                                                       amount: 2000, 
+                                                       balance: 3000) }
+
+    let(:current_date_double_3) { double(:transaction, time: Time.now, 
+                                                       type: :withdrawal, 
+                                                       amount: 500, 
+                                                       balance: 2500) }
+
+    let(:decimal_double_1) { double(:transaction, time: Time.now, 
+                                                  type: :deposit, 
+                                                  amount: 1000.95, 
+                                                  balance: 1000.95) }
+
+    let(:decimal_double_2) { double(:transaction, time: Time.now, type: :deposit, 
+                                                  amount: 2000.95, 
+                                                  balance: 3001.90) }
+                                                  
+    let(:decimal_double_3) { double(:transaction, time: Time.now, 
+                                                  type: :withdrawal, 
+                                                  amount: 500.67, 
+                                                  balance: 2501.23) }
     # Was going to combine current date and decimal doubles to trim this page down,
     # but I decied against this as it violates SRP
 
