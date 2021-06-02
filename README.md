@@ -32,13 +32,13 @@ App is REPL based, use IRB (or PRY) and require the app.rb file, which in turn r
 ### Design
 
 <details>
-<summary>Original design </summary>
+<summary>Original design with print statement defined on account class</summary>
 <br>
 <img src="images/Screenshot 2021-06-01 at 11.32.07.png">
 </details>
 
 <details>
-<summary>Updated design </summary>
+<summary>Updated design with separated responsibilities</summary>
 <br>
 <img src="images/diagram (1).svg">
 </details>
