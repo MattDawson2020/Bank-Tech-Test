@@ -26,7 +26,7 @@ bundle
 ```
 ### Run App
 App is REPL based, use IRB (or PRY) and require the app.rb file, which in turn requires the class files for you
-
+```
 ```
 <p>&nbsp;</p>
 
