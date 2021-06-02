@@ -35,26 +35,36 @@ App is REPL based, use IRB (or PRY) and require the app.rb file, which in turn r
 
 <p>&nbsp;</p>
 
-## Planning
+### Design
+
+<details>
+<summary>Original design </summary>
+<br>
+<img src="images/Screenshot 2021-06-01 at 11.32.07.png">
+</details>
+
+<details>
+<summary>Updated design </summary>
+<br>
+<img src="images/diagram (1).svg">
+</details>
+
+<p>&nbsp;</p>
 
 ### Specification
-<details>
-<summary> Headline </summary>
-<br>
-<ul>
-<li>**Given** a client makes a deposit of 1000 on 10-01-2012  </li>
-<li>**And** a deposit of 2000 on 13-01-2012  </li>
-<li>**And** a withdrawal of 500 on 14-01-2012  </li>
-<li>**When** she prints her bank statement   </li>
-<li> **Then** she would see
+
+**Given** a client makes a deposit of 1000 on 10-01-2012  
+**And** a deposit of 2000 on 13-01-2012  
+**And** a withdrawal of 500 on 14-01-2012  
+**When** she prints her bank statement  
+**Then** she would see
+
 ```
-date || credit || debit || balance \n
-14/01/2012 || || 500.00 || 2500.00 \n
-13/01/2012 || 2000.00 || || 3000.00 \n
-10/01/2012 || 1000.00 || || 1000.00 \n
-</li>
-</ul>
-</details>
+date || credit || debit || balance
+14/01/2012 || || 500.00 || 2500.00
+13/01/2012 || 2000.00 || || 3000.00
+10/01/2012 || 1000.00 || || 1000.00
+```
 
 
 <details>
@@ -90,20 +100,4 @@ So I can pass my tech test
 I would like the print to be formatted like the diagram
 
 ```
-<p>&nbsp;</p>
-
-### Domain Model
-
-<details>
-<summary>Original design </summary>
-<br>
-<img src="images/Screenshot 2021-06-01 at 11.32.07.png">
-</details>
-
-<details>
-<summary>Updated design </summary>
-<br>
-<img src="images/diagram (1).svg">
-</details>
-
 <p>&nbsp;</p>
