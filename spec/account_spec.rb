@@ -10,7 +10,7 @@ describe Account do
       expect(subject.balance).to eq 1500
     end
 
-    it 'can deposite decimals' do
+    it 'can deposit decimals' do
       subject.deposit(465.67)
       expect(subject.balance).to eq 1465.67
     end
@@ -22,12 +22,12 @@ describe Account do
       expect(transaction.balance).to eq 1500
     end
 
-    # it 'only allows you to deposit integers or floats' do
-    #   expect { subject.deposit("money") }.to raise_error "Invalid input type"
-    # end
+    it 'only allows you to deposit integers or floats' do
+      expect { subject.deposit("money") }.to raise_error "Invalid input type, please deposit numeric currency"
+    end
     
-    # Was going to use this and the withdrawal equivalent to provide type verification, but the +/- in the deposit and withdrawal
-    # does it for us. Undecided whether to overwrite with a custom message
+    # The program already rejects string and other inputs automatically, but returns programatic type errors
+    # I decided to overwrite these with more user friendly errors
 
   end
 
@@ -45,9 +45,14 @@ describe Account do
       expect(transaction.balance).to eq 500
     end
 
-    # it 'only allows you to withdraw integers or floats' do
-    #   expect { subject.withdraw("money") }.to raise_error "Invalid withdrawal request"
-    # end
+    it 'prevents withdrawing insufficient funds' do
+      expect { subject.withdraw(1001) }.to raise_error "Insufficient funds"
+      
+    end
+
+    it 'only allows you to withdraw integers or floats' do
+      expect { subject.withdraw("money") }.to raise_error "Invalid withdrawal request, please withdraw numeric currency"
+    end
 
   end
 
