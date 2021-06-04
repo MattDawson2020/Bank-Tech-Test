@@ -30,7 +30,7 @@ class Account
 
   def validate_withdrawal(amount)
     fail 'Invalid withdrawal request, please withdraw numeric currency' unless amount.is_a?(Integer) || amount.is_a?(Float)
-    fail 'Insufficient funds' if amount > @transaction_history.last.balance || new_account?
+    fail 'Insufficient funds' if amount > balance 
   end
 
   def new_account?
