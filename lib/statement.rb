@@ -9,7 +9,7 @@ class Statement
 
   def print_statement
     puts "Date  ||  Credit  ||  Debit  ||  Balance\n" +
-    @account.transaction_history.transactions.reverse.map { |transaction| format_transaction(transaction) }.join("\n")
+    @account.transaction_history.reverse.map { |transaction| format_transaction(transaction) }.join("\n")
   end
 
 
