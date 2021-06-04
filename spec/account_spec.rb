@@ -3,7 +3,6 @@ require 'account'
 describe Account do
   
   context '#deposit' do
-
     it 'can deposit funds' do
       expect { subject.deposit(500) }.to change { subject.balance }.by(500)
     end
