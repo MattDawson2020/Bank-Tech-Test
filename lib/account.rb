@@ -7,7 +7,9 @@ class Account
   end
 
   def balance
-    new_account? ? 0 : @transaction_history.last.balance
+    @transaction_history.inject(0) do |balance, transaction|
+      balance + transaction.amount
+    end
   end
 
   def deposit(amount)
