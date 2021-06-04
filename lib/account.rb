@@ -12,14 +12,12 @@ class Account
 
   def deposit(amount)
     validate_deposit(amount)
-    old_balance = balance
-    @transaction_history <<  Transaction.new(time: Time.now, type: :deposit, amount: amount, balance: old_balance += amount)
+    store_transaction(amount)
   end
 
   def withdraw(amount)
     validate_withdrawal(amount)
-    old_balance = balance
-    @transaction_history << Transaction.new(time: Time.now, type: :withdrawal, amount: amount, balance: old_balance -= amount)
+    store_transaction(-amount)
   end
 
   private
@@ -35,6 +33,10 @@ class Account
 
   def new_account?
     @transaction_history.empty?
+  end
+
+  def store_transaction(amount)
+    @transaction_history << Transaction.new(time: Time.now, amount: amount, balance: balance + amount)
   end
 
 end

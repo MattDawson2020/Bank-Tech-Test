@@ -3,18 +3,15 @@ require 'statement'
 describe Statement do
 
     let(:past_transaction) { double(:transaction, time: DateTime.new(2012, 1, 10),
-                                               type: :deposit, 
                                                amount: 1000, 
                                                balance: 1000) }
 
     let(:decimal_double) { double(:transaction, time: Time.now, 
-                                                type: :deposit, 
                                                 amount: 1000.95, 
                                                 balance: 2000.95) }                                         
 
     let(:recent_transaction) { double(:transaction, time: Time.now, 
-                                                       type: :withdraw, 
-                                                       amount: 500, 
+                                                       amount: -500, 
                                                        balance: 1500.95) }
                                                       
 

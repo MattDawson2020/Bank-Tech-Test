@@ -41,7 +41,7 @@ describe Account do
       subject.withdraw(500)
       transaction = subject.transaction_history.last
 
-      expect(transaction.amount).to eq 500
+      expect(transaction.amount).to eq -500
       expect(transaction.balance).to eq 500
     end
 

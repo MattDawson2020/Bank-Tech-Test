@@ -16,10 +16,10 @@ class Statement
   private 
 
   def format_type(transaction)
-    if transaction.type == :deposit
-      ' || ' + '%.2f' % transaction.amount + ' || || '
+    if transaction.amount.positive? 
+      ' || ' + '%.2f' % transaction.amount.abs + ' || || '
     else
-      ' || || ' + '%.2f' % transaction.amount + ' || '
+      ' || || ' + '%.2f' % transaction.amount.abs + ' || '
     end
   end
 
