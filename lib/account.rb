@@ -33,10 +33,6 @@ class Account
     fail 'Insufficient funds' if amount > balance 
   end
 
-  def new_account?
-    @transaction_history.empty?
-  end
-
   def store_transaction(amount)
     @transaction_history << Transaction.new(time: Time.now, amount: amount, balance: balance + amount)
   end

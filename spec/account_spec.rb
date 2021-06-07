@@ -23,9 +23,7 @@ describe Account do
       expect { subject.deposit('money') }.to raise_error 'Invalid input type, please deposit numeric currency'
       expect { subject.deposit([500]) }.to raise_error 'Invalid input type, please deposit numeric currency'
     end
-    
-    # The program already rejects string and other inputs automatically, but returns programatic type errors
-    # I decided to overwrite these with more user friendly errors as it was very simple
+
   end
 
   context '#withdraw' do
@@ -47,8 +45,6 @@ describe Account do
 
     it 'prevents withdrawing insufficient funds' do
       expect { subject.withdraw(1001) }.to raise_error 'Insufficient funds'
-      # Added because it was very simple and program doesn't specify a need for overdrafts, 
-      # and I wanted the program to not be easily "breakable"
     end
 
     it 'only allows you to withdraw integers or floats' do
