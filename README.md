@@ -112,7 +112,7 @@ I would like the print to be formatted like the diagram
 <p>&nbsp;</p>
 ### Setup
 ```
-git clone https://github.com/MattDawson2020/in_the_airbnb_tonight.git
+git clone https://github.com/MattDawson2020/gilded-rose-ruby-tech-test
 
 bundle
 ```
