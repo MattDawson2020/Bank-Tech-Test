@@ -108,16 +108,17 @@ I would like the print to be formatted like the diagram
  - [x] Print out a statement in the desired format
 <p>&nbsp;</p>
 
-## How to install and run
+# How to install and run
 <p>&nbsp;</p>
-### Setup
-```
+
+## Setup
+
 git clone https://github.com/MattDawson2020/gilded-rose-ruby-tech-test
 
-bundle
-```
-### Run App
-App is REPL based, use IRB (or PRY) and require the app.rb file, which in turn requires the class files for you
+-bundle
+
+## Run App
+### App is REPL based, use IRB (or PRY) and require the app.rb file, which in turn requires the class files for you
 - Create an account object { **account = Account.new** }in the terminal, which defaults to a balance of 0
 - Use **account.deposit(amount)** or **account.withdraw(amount)** with amount being an integer or float numeric value
 - You can use **account.transaction_history** to see an array of transactions
